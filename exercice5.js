@@ -1,25 +1,25 @@
-Analyse du probleme:
-Entree:a,b,c
-Sortie:solution(s)
+// Analyse du probleme:
+// Entree:a,b,c
+// Sortie:solution(s)
 
-Conception:
-Utiliser une structure conditionnelle simple en fonction des cas 
+// Conception:
+// Utiliser une structure conditionnelle simple en fonction des cas 
 
-Pseudo-code:
+// Pseudo-code:
 
-DEBUT
-  Fonction fonctionDuSecondDegre(a,b,c)
-    Declarer a,b,c:reel
-    Lire a,b,c
-    Si a==0 ET b==0 ET c==0 Alors
-      Retourner "Infinite de solution"
-    Declarer DELTA
-    DELTA=b*b-4*a*c
-    Lire DELTA
-    Si 
+// DEBUT
+//   Fonction fonctionDuSecondDegre(a,b,c)
+//     Declarer a,b,c:reel
+//     Lire a,b,c
+//     Si a==0 ET b==0 ET c==0 Alors
+//       Retourner "Infinite de solution"
+//     Declarer DELTA
+//     DELTA=b*b-4*a*c
+//     Lire DELTA
+//     Si 
 
 
-Implementation:
+// Implementation:
 
 
 
