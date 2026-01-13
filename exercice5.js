@@ -1,0 +1,27 @@
+const prompt = require("prompt-sync")();
+const fonctionDuSecondDegre = (a, b, c) => {
+  if (a === 0 && b === 0 && c === 0) {
+    return "Infinite de solution";
+  }
+  if (a === 0 && b == 0) {
+    return "Aucune solution";
+  }
+  if (a === 0) {
+    return { x: -c / b };
+  }
+  const DELTA = b * b - 4 * a * c;
+  if (DELTA < 0) {
+    return "Pas de solution reelle";
+  }
+  if (DELTA === 0) {
+    return { x: -b / (2 * a) };
+  }
+  const x1 = -b - Math.sqrt(DELTA) / (2 * a);
+  const x2 = -b + Math.sqrt(DELTA) / (2 * a);
+  return { x1, x2 };
+};
+const a = Number(prompt("Entrer a: "));
+const b = Number(prompt("Entrer b: "));
+const c = Number(prompt("Entrer c: "));
+
+console.log(fonctionDuSecondDegre(a,b,c));
