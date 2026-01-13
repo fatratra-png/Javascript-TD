@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 let motDePasseSaisi = prompt("Entrer le mot de passe: ");
-let essai = 3;
+let essai = 2;
 let motDePasse = "Incorrect";
 while (motDePasseSaisi !== motDePasse) {
   console.log("Le mot de passe est Incorrect");
