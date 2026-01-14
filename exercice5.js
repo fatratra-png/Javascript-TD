@@ -13,11 +13,27 @@
 //     Lire a,b,c
 //     Si a==0 ET b==0 ET c==0 Alors
 //       Retourner "Infinite de solution"
+//     FinSi
+//
 //     Declarer DELTA
 //     DELTA=b*b-4*a*c
 //     Lire DELTA
-//     Si 
-
+//     Si DELTA<0 Alors
+//       Retourner "Pas de solution reelle"
+//     FinSi
+//     Si DELTA==0 Alors
+//       Declarer x:reel
+//       x=(-c/b)
+//     FinSi
+//     Si DELTA>0 Alors 
+//       Declarer x1:reel
+//       Declarer x2:reel
+//       x1:(-b-Math.sqrt(DELTA))/(2*a)
+//       x2:(-b+Math.sqrt(DELTA))/(2*a)
+//       Retourner x1
+//       Retourner x2
+//     FinSi
+// FIN
 
 // Implementation:
 
