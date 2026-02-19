@@ -36,6 +36,7 @@ Début
   retourner newtab
 Fin
 */
+
 const alternate = (tab) => {
   let newTab = [];
   let left = 0;
