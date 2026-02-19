@@ -36,21 +36,19 @@ Début
   retourner newtab
 Fin
 */
-const alternateArray = (tab) => {
-    let alternatedArray = [];
-    let left = 0;
-    let right = tab.length - 1;
+const alternate = (tab) => {
+  let newTab = [];
+  let left = 0;
+  let right = tab.length - 1;
 
-    while (left  < right ){
-      alternatedArray.push (tab[left]);
-      alternatedArray.push (tab[right]);
-      left ++;
-      right --;
-      if (right == left){
-        alternatedArray.push (tab[right])
-        break;
-      };
+  while (left <= right) {
+    newTab.push(tab[left]);
+    if (left != right) {
+      newTab.push(tab[right]);
     }
-    return alternatedArray;
-}
-console.log(alternateArray([1,2,3,4,5]));
+    left++;
+    right--;
+  }
+  return newTab;
+};
+console.log(alternate([1, 2, 3, 4, 5]));
