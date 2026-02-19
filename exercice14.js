@@ -1,18 +1,18 @@
 // Analyse du problème :
 // 	Entrée : Choix numerote de 1 a 4
-// 	Sortie :Un message et une transaction en fonction du choix  
+// 	Sortie :Un message et une transaction en fonction du choix
 
 // Conception :
 // 	Utiliser une structure consitionnelle TANT QUE pour afficher le menu en continu
 //  Utiliser une structure conditionnelle a choix multiple pour savoir quel message afficher a l'utilisateur et quelle transaction effectuer du cote de la machine DAB
 
 // Pseudo-code :
-// DEBUT 
+// DEBUT
 //   Declarer solde:entier
 //   Declarer choix:entier
 //   Declarer montant:entier
 //   choix=0
-  
+
 //   TANT QUE choix!=0 Faire
 //     Afficher "===BOA==="
 //     Afficher "1-Versement"
@@ -21,7 +21,7 @@
 //     Afficher "4-Quitter"
 //     choix="Transaction a effectuer : "
 //     Lire choix
-    
+
 //     Selon choix
 
 //           cas choix=1
@@ -43,7 +43,6 @@
 // FIN
 
 //Implementation:
-
 
 const prompt = require("prompt-sync")();
 let solde = 3000000;
@@ -78,10 +77,9 @@ while (choix !== 4) {
       console.log(`Solde actuel: ${solde}`);
       break;
     case 4:
-        console.log('Merci');
-        break;
+      console.log("Merci");
+      break;
     default:
-        console.log('Choix invalide');
-        
+      console.log("Choix invalide");
   }
 }

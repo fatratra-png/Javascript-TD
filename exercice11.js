@@ -18,15 +18,13 @@
 //    Afficher "Le mot de passe est Incorrect"
 //    Lire motDePasse
 //    essaiRestant=essaiRestant-1
-  
+
 //      Si essaiRestant==0 Alors
 //        Sortir de la boucle
 //      FinSi
 //  Fin TANT QUE
 
 //FIN
-
-  
 
 //Implementation:
 

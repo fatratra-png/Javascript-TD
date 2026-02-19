@@ -28,6 +28,8 @@
 
 // FIN
 
+//Implementaion:
+
 const prompt=require('prompt-sync')();
 const estParfait=(n)=>{
     let somme = 0;

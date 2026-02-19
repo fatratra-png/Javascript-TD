@@ -1,3 +1,9 @@
+const prompt = require("prompt-sync")();
+const motDePasse = prompt("Entrer un mot de passe: ");
+if (motDePasse.length <= 8) {
+    console.log("Reponse invalide");
+}
+
 // Analyse du probleme:
 // Entree:mot de passe
 // Sortie:message en fonction du mot de passe
@@ -25,7 +31,7 @@ const prompt = require("prompt-sync")();
 let motDePasse = "5825451311spicy";
 let auth = prompt("Entrer le mot de passe: ");
 if (auth === motDePasse) {
-  console.log("Vous etes authentifie,bienvenue");
+    console.log("Vous etes authentifie,bienvenue");
 } else {
-  console.log("Mauvais mot de passe");
+    console.log("Mauvais mot de passe");
 }
