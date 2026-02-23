@@ -1,66 +1,66 @@
-/*exo 2 alterner depuis le milieu
-Analyse du problème:
-entrer: tableau d'entier
-sortie: elements alterner depuis le milieu
+//Écrire un algorithme affichant les éléments d’un tableau de façon alternée en commençant par l'élément du milieu, puis en alternant les éléments à droite et à gauche. Par exemple, pour le tableau [1,2,3,4,5] il affichera 3,4,2,5,1.
 
-conception:
--creer une fonction milieu qui va prendre en paramètre un  tableau
--creer une valiable gauche = 0 et droite = tab.longueur - 1
--creer une valiable milieu =(gauche + droite)/2
--creer un nouveau tableau pour stocker les éléments alterner
--utiliser une boucle tant que que tab.longueur > newTab.longueur on insere milieu en tant que dernier element du newtab et gauche = milieu -1 
-droite = milieu + 1 
--utilisre une condition si que gauche >= 0 on insere gauche en tangt que dernier element de newtab et que si droite < tab.longueur on insere 
-droite en tant que dernier element de newtab
--on augmente droite et decremente gauche après avoir fini un tour
+//Analyse du probleme:
+//Entree:tableau d'entier
+//Sortie: tableau d'entier alterné depuis le milieu puis à droite et à gauche
 
-pseudo-code:
-Début
-  Déclarer tab: tableau
-  Déclarer newTab: tableau
-  newTab =[]
-  Déclarer gauche: entier
-  Déclarer droite : entier
-  Déclarer milieu :entier
-  fonction milieu (tab)
-    gauche = 0
-    droite = tab.longueur - 1
-    milieu = arrondissement((gauche + droite)/2)
-     inserer ilieu en tant que dernier element de newtab
-       gauche = milieu - 1
-       droite = milieu + 1
-    tant que tab.longueur != newtab.longueur
-        Si dtroite < tab.longueur faire 
-          inserer droite en tant que dernier element de newtab
-          droite ++
-        Fin si
-        Si gauche >=0 faire 
-          inserer gauche en tant que dernier element de tab
-          gauche --
-        Fin si 
-    fin tant que
-  fin fonction
-fin
-*/
-function milieu(tab) {
-  let gauche = 0;
-  let droite = tab.length - 1;
-  const milieu = Math.floor((gauche + droite) / 2);
+//Conception:
+//Trouver le milieu du tableau
+//Créer un nouveau tableau
+//Ajouter le milieu du tableau dans le nouveau tableau
+//Ajouter les éléments à droite et à gauche du milieu dans le nouveau tableau jusqu'à ce que tous les éléments soient ajoutés
+
+//Pseudocode:
+
+//DEBUT
+//Declarer left: entier
+//Declarer right: entier
+//Declarer milieu: entier
+//Declarer newTab: tableau
+
+//Fonction AlternateFromMid(tab):
+
+//  left = 0
+//  right = longueur de tab - 1
+//  milieu = [(left + right) / 2]
+//  ajouter tab[milieu] à newTab en tant que premier élément
+//  right = milieu + 1
+//  left = milieu - 1
+//  Tant que longueur de newTab !== longueur de tab Faire
+//    Si droite < longueur de tab Alors
+//      ajouter tab[droite] à newTab en tant que dernier élément
+//      droite=droite + 1
+//    Fin Si
+//    Si gauche >= 0 Alors
+//      ajouter tab[gauche] à newTab en tant que dernier élément
+//    Fin Si
+//      gauche=gauche - 1
+//  Fin Tant que
+//  retourner newTab
+//Fin Fonction
+//FIN
+
+//Implementation
+
+const alternateFromMid = (tab) => {
+  let left = 0;
+  let right = tab.length - 1;
+  let milieu = Math.floor((left + right) / 2);
   let newTab = [];
   newTab.push(tab[milieu]);
-  droite = milieu + 1;
-  gauche = milieu - 1;
-  while (tab.length != newTab.length) {
-    if (droite < tab.length) {
-      newTab.push(tab[droite]);
-      droite++;
+  right = milieu + 1;
+  left = milieu - 1;
+  while (newTab.length !== tab.length) {
+    if (right < tab.length) {
+      newTab.push(tab[right]);
+      right++;
     }
-    if (gauche >= 0) {
-      newTab.push(tab[gauche]);
-      gauche--;
+    if (left >= 0) {
+      newTab.push(tab[left]);
+      left--;
     }
   }
   return newTab;
-}
-console.log(milieu([1, 2, 3, 4, 5]));
+};
 
+console.log(alternateFromMid([1,2,3,4,5]));
