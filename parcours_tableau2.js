@@ -1,4 +1,3 @@
-
 //Analyse du probleme:
 //Entree:tableau d'entier
 //Sortie: tableau d'entier alterné depuis le milieu puis à droite et à gauche

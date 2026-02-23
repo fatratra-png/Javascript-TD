@@ -1,8 +1,3 @@
-// On considère un tableau T de n + 1 entier compris entre 1 et n. Chaque entier n'apparaît qu’une fois dans le tableau sauf l’un d’eux, apparaissant deux fois, noté x.
-
-// a. Écrire une relation simple entre la somme des éléments du tableau et  x.
-// b. En déduire un algorithme permettant de trouver l'élément en double en effectuant un seul parcours de tableau.
-
 //Analyse du probleme:
 //Entree:tableau d'entier de taille n+1 avec des éléments compris entre 1 et n, où un élément apparaît deux fois
 //Sortie: l'élément qui apparaît deux fois
