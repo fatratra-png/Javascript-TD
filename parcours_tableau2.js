@@ -1,4 +1,3 @@
-//Écrire un algorithme affichant les éléments d’un tableau de façon alternée en commençant par l'élément du milieu, puis en alternant les éléments à droite et à gauche. Par exemple, pour le tableau [1,2,3,4,5] il affichera 3,4,2,5,1.
 
 //Analyse du probleme:
 //Entree:tableau d'entier
@@ -63,4 +62,4 @@ const alternateFromMid = (tab) => {
   return newTab;
 };
 
-console.log(alternateFromMid([1,2,3,4,5]));
+console.log(alternateFromMid([1, 2, 3, 4, 5]));
