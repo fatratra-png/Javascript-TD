@@ -1,0 +1,77 @@
+// Analyse du problème
+// Entrée : une chaîne de caractères
+// Sortie : VRAI si les parenthèses sont équilibrées, FAUX sinon
+
+// Conception
+// Utiliser une pile pour stocker les symboles ouvrants
+// Parcourir la chaîne de caractères et pour chaque symbole :
+// Si c'est un symbole ouvrant, l'ajouter sur la pile
+// Si c'est un symbole fermant, vérifier si le sommet de la pile correspond au symbole ouvrant correspondant
+// Si oui, dépiler le sommet de la pile, sinon retourner FAUX
+// À la fin du parcours, si la pile est vide, retourner VRAI, sinon retourner FAUX
+
+// Pseudo-code
+
+// DEBUT
+//    Declarer pile: tableau
+//    Declarer correspondance: dictionnaire
+//      correspondance = {
+//      ")": "(",
+//      "]": "[",
+//      "}": "{",
+//      };
+
+//   Fonction estEquilibre(chaine):
+//     Pour chaque caractere dans chaine Faire
+//       Si caractere est un symbole ouvrant Alors
+//         Ajouter caractere à pile
+//       Sinon Si caractere est un symbole fermant Alors
+//         Si pile est vide Alors
+//           Retourner FAUX
+//         Fin Si
+//         sommet = dernier élément de pile
+//         Si sommet et caractere ne sont pas correspondants Alors
+//           Retourner FAUX
+//         Fin Si
+//         Retirer le sommet de la pile
+//       Fin Si
+//     Fin Pour
+
+//     Si pile est vide Alors
+//       Retourner VRAI
+//     Sinon
+//       Retourner FAUX
+//     Fin Si
+
+//   Fin Fonction
+
+// FIN
+
+function estEquilibre(chaine) {
+  const pile = [];
+  const correspondance = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (const caractere of chaine) {
+    if (caractere === "(" || caractere === "[" || caractere === "{") {
+      pile.push(caractere);
+    } else if (caractere === ")" || caractere === "]" || caractere === "}") {
+      if (pile.length === 0) {
+        return false;
+      }
+      const sommet = pile[pile.length - 1];
+      if (correspondance[caractere] !== sommet) {
+        return false;
+      }
+      pile.pop();
+    }
+  }
+
+  return pile.length === 0;
+}
+
+console.log(estEquilibre("()[()]")); // VRAI
+console.log(estEquilibre("{(})")); // FAUX

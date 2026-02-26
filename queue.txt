@@ -1,0 +1,98 @@
+//II-queue
+
+// Analyse du problème
+// Entrée : liste de commandes (tableau de chaînes de caractères)
+// Sortie : affichage des résultats des opérations "serve" et "isEmpty"
+
+// Conception
+// Utiliser une structure de données pour gérer les personnes qui sont dans la file d'attente
+// Parcourir la liste de commandes et appliquer les opérations correspondantes
+
+// Pseudo-code
+
+// DEBUT
+
+//   Fonction traiterFile(listeCommandes):
+//     Declarer file: liste vide
+
+//     Pour chaque commande dans listeCommandes Faire
+//       Selon commande Faire
+//         "arriveNom" :ajouter à la fin de la file
+//         "serve" : si la file n'est pas vide, retirer et afficher le nom de la personne au début de la file
+//         "isEmpty" : afficher VRAI si la file est vide, sinon FAUX
+//       Fin Selon
+//     Fin Pour
+//   Fin Fonction
+// FIN
+
+// Implementation
+
+function traiterFile(listeCommandes) {
+  let file = [];
+
+  for (let commande of listeCommandes) {
+    if (commande.startsWith("arrive")) {
+      const nom = commande.split(" ")[1];
+      file.push(nom);
+    } else if (commande === "serve") {
+      if (file.length > 0) {
+        const personneServie = file.shift();
+        console.log(`Servi: ${personneServie}`);
+      } else {
+        console.log("Aucune personne à servir");
+      }
+    } else if (commande === "isEmpty") {
+      console.log(file.length === 0 ? "VRAI" : "FAUX");
+    }
+  }
+}
+
+const commandes = [
+  "arrive Alice",
+  "arrive Bob",
+  "serve",
+  "isEmpty",
+  "arrive Carol",
+  "serve",
+  "serve",
+  "isEmpty",
+];
+
+traiterFile(commandes);
+
+// III-
+
+//Analyse du problème
+//Entrée : tableau d'entiers T et entier x
+//Sortie : distance de chaque élément du tableau à x
+
+//Conception
+//Utiliser une structure conditionnelle pour parcourir le tableau et calculer la distance de chaque élément à x en soustrayant x de chaque élément et en prenant la valeur absolue du résultat
+
+//Pseudocode
+
+//DEBUT
+
+//  Fonction calculerDistances(tab, x):
+//    Declarer distances: tableau vide
+//    Pour i allant de 0 à longueur de tab - 1 Faire
+//      distance = valeur absolue de (tab[i] - x)
+//      Ajouter distance à distances
+//    Fin Pour
+//    retourner distances
+//  Fin Fonction
+
+//FIN
+
+function calculerDistances(tab, x) {
+  let distances = [];
+  for (let i = 0; i < tab.length; i++) {
+    const distance = Math.abs(tab[i] - x);
+    distances.push(distance);
+  }
+  return distances;
+}
+
+const tab = [3, 1, 5, 9, 4];
+const x = 7;
+console.log(calculerDistances(tab, x));

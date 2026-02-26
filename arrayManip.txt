@@ -1,0 +1,110 @@
+//1)
+
+//Analyse du problème
+//Entrée : tableau d'entiers T, entier i, entier x
+//Sortie : indice de l'élément du tableau le plus éloigné de x à partir de l'indice i
+
+//Conception
+//Utiliser une structure conditionnelle pour parcourir le tableau à partir de l'indice i et calculer la distance de chaque élément à x en soustrayant x de chaque élément et en prenant la valeur absolue du résultat, puis comparer les distances pour trouver l'indice de l'élément le plus éloigné
+
+//Pseudocode
+
+//DEBUT
+
+//    Declarer maxDistance: entier
+//    Declarer maxIndex: entier
+//    maxDistance = 0
+//    maxIndex = i
+
+//  Fonction MaxDistance(T, i, x):
+//    Pour j allant de i à longueur de T - 1 Faire
+//      distance = valeur absolue de (T[j] - x)
+//      Si distance > maxDistance Alors
+//        maxDistance = distance
+//        maxIndex = j
+//      Fin Si
+//    Fin Pour
+//    retourner maxIndex
+//  Fin Fonction
+
+//FIN
+
+function MaxDistance(T, i, x) {
+  let maxDistance = 0;
+  let maxIndex = i;
+  for (let j = i; j < T.length; j++) {
+    const distance = Math.abs(T[j] - x);
+    if (distance > maxDistance) {
+      maxDistance = distance;
+      maxIndex = j;
+    }
+  }
+  return maxIndex;
+}
+
+const T = [3, 1, 5, 9, 4];
+const x = 7;
+console.log(MaxDistance(T, 0, x));
+console.log(MaxDistance(T, 2, x));
+
+//2)
+
+//Analyse du problème
+//Entrée : tableau d'entiers T, entier x
+//Sortie : tableau d'entiers trié selon leur distance à x du plus éloigné au plus proche
+
+//Conception
+//Utiliser une structure conditionnelle pour parcourir le tableau et calculer la distance de chaque élément à x en soustrayant x de chaque élément et en prenant la valeur absolue du résultat, puis trier les éléments du tableau en fonction de ces distances en utilisant un algorithme de tri comme le tri à bulles ou le tri par sélection
+
+//Pseudocode
+
+//DEBUT
+
+//  Fonction TriDistance(T, x):
+//    Declarer distances: tableau vide
+//    Pour i allant de 0 à longueur de T - 1 Faire
+//      distance = valeur absolue de (T[i] - x)
+//      Ajouter distance à distances
+//    Fin Pour
+
+//    Pour i allant de 0 à longueur de T - 1 Faire
+//      Pour j allant de 0 à longueur de T - i - 2 Faire
+//        Si distances[j] < distances[j + 1] Alors
+//          Echanger distances[j] et distances[j + 1]
+//          Echanger T[j] et T[j + 1]
+//        Fin Si
+//      Fin Pour
+//    Fin Pour
+
+//    retourner T
+//  Fin Fonction
+
+//FIN
+
+function TriDistance(T, x) {
+  let distances = [];
+  for (let i = 0; i < T.length; i++) {
+    const distance = Math.abs(T[i] - x);
+    distances.push(distance);
+  }
+
+  for (let i = 0; i < T.length; i++) {
+    for (let j = 0; j < T.length - i - 1; j++) {
+      if (distances[j] < distances[j + 1]) {
+        const tempDistance = distances[j];
+        distances[j] = distances[j + 1];
+        distances[j + 1] = tempDistance;
+
+        const tempValue = T[j];
+        T[j] = T[j + 1];
+        T[j + 1] = tempValue;
+      }
+    }
+  }
+
+  return T;
+}
+
+const T2 = [3, 1, 5, 9, 4];
+const x2 = 7;
+console.log(TriDistance(T2, x2));
